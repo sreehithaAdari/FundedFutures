@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+      <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        font-family: 'Ysabeau', sans-serif;
+        text-decoration: none;
+        border: none;
+        scroll-behavior: smooth;
+        outline: none;
+    }
+
+    body {
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #e6ccb2;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+        max-width: 600px; /* Adjusted max-width */
+        height: auto; /* Adjusted height */
+        background: #1c2541;
+        border-radius: 20px;
+        border: 2px solid rgba(257, 257, 257, .27);
+        backdrop-filter: blur(20px);
+        display: flex;
+        flex-direction: column; /* Changed to column layout */
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .main-box{
+        padding: 50px;
+        width: 100%;
+    }
+
+    .main-box h1{
+        text-align: center;
+        font-size: 42px;
+        font-weight: 700;
+        color: #F9B420;
+    }
+
+    .input-box{
+        position: relative;
+        height: 52px;
+        width: 100%;
+        border-bottom: 2px solid #F9B420;
+        margin: 32px 0;
+    }
+
+    .input-box label{
+        position: absolute;
+    top: 16px; /* Adjust the top value for better alignment */
+        left: 6px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: #F9B420;
+        font-weight: 500;
+        font-size: 18px;
+        transition: all ease .40s;
+    }
+    
+    .input-box input{
+        height: 100%;
+        width: 100%;
+        background: transparent;
+        font-size: 17px;
+        font-weight: 600;
+        color: #F9B420;
+    padding: 26px 30px 6px 6px; /* Adjust top padding to create space */
+    }
+
+
+
+    .input-box .icon{
+        position: absolute;
+        right: 9px;
+        font-size: 20px;
+        color: #F9B420;
+        line-height: 55px;
+    }
+
+    .input-box input:focus~label,
+    .input-box input:valid~label{
+        top: -3px;
+            font-size: 14px; /* Adjust font size to prevent overlap */
+    transform: translateY(-50%) scale(0.85); /* Apply scaling to the label */
+}
+
+    
+
+    .btn{
+        width: 100%;
+        height: 45px;
+        background: #F9B420;
+        border-radius: 30px;
+        font-size: 17px;
+        font-weight: 600;
+        color: #000;
+        margin-top: 10px;
+        cursor: pointer;
+    }
+
+    .register{
+        text-align: center;
+        color: #F9B420;
+        font-size: 15px;
+        font-weight: 500;
+        margin: 35px 0 10px;
+    }
+
+    .register p a{
+        font-size: 15px;
+        font-weight: 600;
+        color: #F9B420;
+        margin-left: 5px;
+    }
+
+    .register p a:hover{
+        text-decoration: underline;
+
+    }
+
+    .label userType{
+        color:#F9B420
+    }
+
+    /* Styling for the label "Select User Type" */
+label[for="userType"] {
+  font-size: 18px;
+  color: #F9B420;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+/* Styling for the select user type dropdown */
+#userType {
+  width: 100%;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px dashed #F9B420;
+  border-radius: 10px;
+  color: #F9B420;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 0 30px 0 6px;
+  margin-bottom: 32px;
+}
+
+/* Styling for the options within the select dropdown */
+#userType option {
+  background-color: #1c2541;
+  color: #F9B420;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+
+  </style>
+</head>
+<body>
+   
+
+   
+         <div class="container">
+            <div class="main-box">
+                <h1>Sign Up</h1>
+                 <form action="/register" method="post">
+                  <div class="input-box">
+                    <span class="icon"> <i class="bx bxs-user"></i></span>
+                    <input type="name" name="name" placeholder="" required>
+                    <label for="email">Username</label>
+                 </div>
+
+                 <div class="input-box">
+                    <span class="icon"> <i class="bx bxs-envelope"></i></span>
+                    <input type="email" name="email" placeholder="" required>
+                    <label for="email">Email</label>
+                 </div>
+
+
+                 <label for="userType" class="userType"> Select User Type:</label>
+  <select id="userType" name="userType" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="student" class="val">Student</option>
+                <option value="organizer" class="val">Organizer</option>
+            </select>
+
+
+
+                 <div class="input-box">
+                    <span class="icon"> <i class="bx bxs-lock-alt"></i></span>
+                    <input type="password" name="password" placeholder="" required>
+                    <label for="password">Password</label>
+                 </div>
+
+                 <button type="submit" class="btn"> Sign Up</button>
+
+                 <div class="register">
+
+                    <p>Already have an account?
+                    <a href="login" class="register-link">Login</a>
+                    </p>
+
+                 </div>
+          
+          
+         
+          
+                </form>
+        
+
+        
+</body>
+</html>

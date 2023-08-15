@@ -1,0 +1,147 @@
+
+<style>
+    /* Styling for the applied scholarships section */
+    .applied-scholarships {
+        background: radial-gradient(ellipse at center, #1c2541, #10141f);
+        padding: 10px 0;
+        font-family: 'Courier New', monospace;
+        color: #F9B420;
+    }
+
+    .applied-scholarship {
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 2px dashed #F9B420;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 20px 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .applied-scholarship h3 {
+        font-size: 24px;
+        color: #F9B420;
+        margin-bottom: 10px;
+    }
+
+    .applied-scholarship p {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #ffffff;
+    }
+
+    .applied-scholarship p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Additional styling for list-style bullets */
+    .applied-scholarship:before {
+        content: ""; /* Unicode bullet character */
+        color: #F9B420;
+        font-size: 18px;
+        margin-right: 10px;
+    }
+
+    /* Styling for the "Amount" text */
+    .applied-scholarship p.amount {
+        color: #F9B420;
+        font-weight: bold;
+    }
+
+        header{
+    background: #1c2541;
+    position: relative;
+    top: 0;
+    right: 0;
+   
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 20px 20%;
+    transition: ease .40ss;
+}
+
+.header-container {
+            
+            background-color: #f0f0f0;
+            /* Add any other styling as needed */
+                        overflow: hidden;}
+            
+/* Add this CSS to adjust the header alignment */
+header.sticky {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+}
+
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #F9B420;
+    margin-left: 10px;
+}
+
+
+.fa-graduation-cap{
+    width: auto;
+
+}
+
+.navbar a{
+    position: relative;
+    font-size: 15px;
+    
+    color: #F9B420;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 20px;
+    border-radius: 3px;
+    transition: ease .40s;
+    padding: 5px 5px;
+  
+}
+
+.navbar a:hover{
+    
+    background-color: #3a506b;
+    color: var(--text-color);
+    box-shadow: 10px 10px 30px rgba(211, 184, 10, 0.2) ;
+    border-radius: 5px;
+}
+
+
+
+
+</style>
+
+
+     <header class="sticky">
+  <a href="/home-stu" class="logo"><i class="fa-solid fa-graduation-cap"></i>FundedFutures</a>
+  <div class="bx bx-menu" id="menu-icon"></div>
+  <nav class="navbar">
+    <a href="/home-stu">Home</a>
+        <a href="/student-profile" > Scholarships</a>
+      <a href="login">Logout</a>
+  </nav>
+</header>
+
+
+<section class="applied-scholarships">
+    <h2>Applied Scholarships</h2>
+    {{#each appliedScholarships}}
+        <div class="applied-scholarship">
+            <h3>{{this.title}}</h3>
+            <p>{{this.description}}</p>
+            <p>Amount: {{this.amount}}</p>
+        </div>
+    {{/each}}
+</section>

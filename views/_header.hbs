@@ -1,0 +1,98 @@
+
+<style>
+  
+header{
+    background: #1c2541;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 20px 20%;
+    transition: ease .40ss;
+}
+
+.header-container {
+            width: 100%;
+            background-color: #f0f0f0;
+            /* Add any other styling as needed */
+            overflow: hidden;}
+            
+/* Add this CSS to adjust the header alignment */
+header.sticky {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+}
+
+.navbar {
+  display: flex;
+  gap: 20px;
+}
+
+
+.logo{
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-color);
+    margin-left: 10px;
+}
+
+
+.fa-graduation-cap{
+    width: auto;
+
+}
+
+
+.navbar a{
+    position: relative;
+    font-size: 1em;
+    
+    color: #F9B420;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 20px;
+    border-radius: 3px;
+    transition: ease .40s;
+    padding: 5px 5px;
+  
+}
+
+
+.navbar a:hover{
+    
+    background-color: #3a506b;
+    color: var(--text-color);
+    box-shadow: 10px 10px 30px rgba(85 85 85 / 20%) ;
+    border-radius: 5px;
+}
+
+
+#menu-icon{
+    color: var(--bg-color);
+    font-size:  40px;
+    z-index: 1000;
+    cursor: pointer;
+    display: none;
+}
+</style>
+<header class="sticky">
+  <a href="#" class="logo"><i class="fa-solid fa-graduation-cap"></i>SIS</a>
+  <div class="bx bx-menu" id="menu-icon"></div>
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#">Scholarships</a>
+    <a href="#about_us">About Us</a>
+    <a href="#" >Applied Students</a>
+    <a href="login">Logout</a>
+  </nav>
+</header>
+

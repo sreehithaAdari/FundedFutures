@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FundedFutures
+  </title>
+
+  {{!-- <link rel="stylesheet" href="/backend/public/css/style.css"> --}}
+
+  <link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,600;1,200&family=Ysabeau:ital,wght@0,1;0,200;0,300;0,400;0,500;0,600;1,400&display=swap" 
+rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+</head>
+
+<style>
+    *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+font-family: 'Ysabeau', sans-serif;
+text-decoration: none;
+list-style: none;
+scroll-behavior: smooth;
+}
+
+
+:root{
+    --bg-color : #fff;
+    --text-color : #F9B420;
+    --second-color : black;
+    --main-color : beige;
+    --big-font : 4rem;
+    --h2-font : 2rem;
+    --p-font : 1.1rem;
+}
+
+
+body{
+    background: #1c2541;
+    color: var(--text-color);
+}
+
+
+header{
+    background: #1c2541;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    padding: 20px 20%;
+    transition: ease .40ss;
+}
+
+.logo{
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--text-color);
+    margin-left: 10px;
+}
+
+
+.fa-graduation-cap{
+    width: auto;
+
+}
+
+
+.navbar a{
+    position: relative;
+    font-size: 1em;
+    
+    color: #F9B420;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 20px;
+    border-radius: 3px;
+    transition: ease .40s;
+    padding: 5px 5px;
+  
+}
+
+
+.navbar a:hover{
+    
+    background-color: #3a506b;
+    color: var(--text-color);
+    box-shadow: 10px 10px 30px rgba(85 85 85 / 20%) ;
+    border-radius: 5px;
+}
+
+
+#menu-icon{
+    color: var(--bg-color);
+    font-size:  40px;
+    z-index: 1000;
+    cursor: pointer;
+    display: none;
+}
+
+section{
+    padding: 60px 20%;
+}
+
+.home{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/istockphoto-1353569120-612x612.jpg);
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    align-items: center;
+}
+
+
+.home-text h1{
+    font-size: var(--big-font );
+    line-height: 1.2;
+    color: #1c2541;
+    font-family:'Paytone One' ,sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.home-text p{
+    color: #3a506b;
+    font-size: 20px;
+    font-weight: 450;
+    margin-bottom: 50px;
+    line-height: 40px;
+}
+
+.home-btn{
+    display: inline-block;
+    font-size: 20px;
+    padding: 10px 20px;
+    background: #fff;
+    color: black;
+    border-radius: 25px;
+    transition: ease .3s;
+    cursor: pointer;
+}
+
+.home-btn:hover{
+    background: var(--bg-color);
+    transform: scale(1);
+}
+
+.container{
+    background:#3a506b ;
+}
+
+.text h2{
+    font-size: var(--h2-font);
+    line-height: 1.2;
+
+}
+
+.about{
+    height: 100vh;
+    width: 100%;
+    background:#4b698f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .main img{
+    width:400px;
+    max-width: 100%;
+   height: fit-content;
+    
+}
+
+/* .all-text{
+    width: 700px;
+    max-width: 100%;
+    padding: 0 100px;
+} */
+
+.main{
+    width: 1290px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.all-text h4{
+    font-family: 'Roboto' , sans-serif;
+    font-size: 18px;
+    color: #F9B420;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.all-text h1{
+    font-size: 40px;
+    color: #edc531;
+    font-weight: 700;
+    
+}
+
+.all-text p{
+    font-family: 'Roboto' , sans-serif;
+    font-size: 16px;
+    color: #151616;
+    line-height: 30px;
+    margin-bottom: 30px;
+}
+
+.main-container{
+    width: 800px;
+    margin:auto;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.all-text-container {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 35px;
+    font-weight: 700;
+
+}
+
+.gif {
+    padding-left:10px;
+    
+}
+
+.btn button{
+    background: #1c2541 ;
+    padding: 20px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #edc531;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    box-shadow: 0px 16px 32px 0px rgb( 0 0 0 / 6%);
+    
+}
+
+.btn button:hover{
+    background-color: #678dbe;
+    color: #ffe169;
+    transition: .3s;
+    cursor: pointer;
+}
+
+
+@media (max-height:800px){
+    footer{
+        position: static;
+    }
+
+    header{
+        padding-top: 20px;
+    }
+}
+
+/* footer starts */
+.footer-distributed{
+    background-color:#1c2541;
+    box-sizing: border-box;
+    widows: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 50px 50px 60px 50px;
+    margin-top: 80px;
+}
+
+
+.footer-distributed .footer-left, .footer-distributed .footer-center, .footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer-distributed .footer-left{
+    width: 30%;
+}
+
+.footer-distributed h3{
+    color: #fff;
+    font: normal 36px 'cookie' , cursive;
+    margin: 0;
+}
+
+.footer-distributed h3 span{
+    color: #e0ac1c;
+}
+
+.footer-distributed .footer-links{
+    color: #fff;
+    margin: 20px 0 12px ;
+}
+
+.footer-distributed .footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+.footer-distributed .footer-company-name{
+    color: #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-center{
+    width: 35%;
+}
+
+.footer-distributed .footer-center i{
+    background-color: #4b698f;
+    color:#fff;
+    width: 38px;
+    font-size: 25px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+    
+}
+
+.footer-distributed .footer-center p{
+    display: inline-block;
+    color: #fff;
+    vertical-align: middle;
+    margin: 0;
+}
+
+.footer-distributed .footer-center p span{
+    display: block;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 2;
+}
+
+
+.footer-distributed .footer-center p a{
+    color: #e0ac1c;
+}
+
+
+.footer-distributed .footer-right{
+    width: 30%;
+}
+
+.footer-distributed .footer-company-about{
+    line-height: 20px;
+    color: #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+    display: block;
+    color: #ffff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+    margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-left-color: #33383b;
+    border-radius: 2px;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+.footer-distributed .footer-icons a:hover{
+    background-color: #3f71ea;
+}
+
+.footer-links a:hover{
+    color: #3f71ea;
+}
+
+@media (max-width:880px) {
+    .footer-distributed .footer-links, .footer-distributed .footer-center ,
+    .footer-distributed .footer-right{
+        display:  block;
+        width: 100%;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .footer-distributed .footer-center i{
+        margin-left: 0;
+    }
+}
+/* footer ends */
+
+
+/* our team starts */
+
+.team{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #3a506b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.team-content{
+    width: 100%;
+    max-width: 1550px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(100px ,auto));
+    align-items: center;
+    gap: 3rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.team-content img{
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+.center h1{
+    color: #F9B420;
+    font-size: 3rem;
+    text-align: center;
+}
+
+
+
+.box{
+    padding: 10px;
+    background: #1c2541;
+    border-radius: 15px;
+    transition: all .30s ease;
+}
+
+.box h3{
+    margin-bottom: 15px;
+}
+
+.icons i{
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    margin: 0 8px;
+    transition: all .38s ease;
+}
+
+.icons i:hover{
+    transform:scale(1.2);
+}
+
+.box:hover{
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+/* our team ends */
+</style>
+<body>
+  
+  <!-- header starts -->
+  <header class="sticky">
+    
+    <a href="#" class="logo"><i class="fa-solid fa-graduation-cap"></i>FundedFutures</a>
+    
+  <div class="bx bx-menu" id="menu-icon"></div>
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        {{!-- <a href="#">Scholarships</a>
+        <a href="#">My Scholarships</a> --}}
+        <a href="#about_us" >About Us</a>
+
+        <a href="login">Login</a>
+       <a href="register">Register</a>
+       
+        
+        
+    </nav>
+</header>
+<!-- header ends -->
+
+
+<!-- home starts -->
+<section class="home" id="home">
+  <div class="home-text">
+    {{!-- <h1>Welcome!!</h1> --}}
+
+    {{!-- <p> Find the right scholarships for you all at one place.
+    </p> --}}
+
+    <h3 style="color: #1c2541; font-size:40px">What is better than a relationship?</h3>
+    <h2 style="color: #1a1b1c; font-size:35px">A scholarship!</h2>
+    
+  </div>
+</section>
+<!-- home ends -->
+
+<!-- container starts-->
+<section class="container">
+  <div class="main-container">
+    <div class="all-text-container">
+      <h2>Find the right Scholarships that suits you</h2>
+    </div>
+   
+    <img class="gif" src="../images/bubble-gum-workflow.gif"  alt="">
+  
+  </div>
+</section>
+
+<!-- container ends -->
+
+
+<!-- about us starts -->
+<section class="about" id="about_us">
+  <div class="main">
+    <img src="../images/undraw_analyze_yellow.svg" >
+    <div class="all-text">
+      <h4>About Us</h4>
+      <h1>Find scholarships</h1>
+      <p style="color:#1a1b1c;">At FundedFutures, we believe that every student deserves a chance to thrive academically, regardless of their financial circumstances. That's why we're committed to simplifying the scholarship search process, helping you uncover opportunities that align with your journey, and ultimately contributing to your educational success.
+
+      </p>
+
+      <div class="btn">
+         <a href="#our_team"> <button type="button"> Our Team </button></a>
+        <button type="button">Learn More</button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- about us ends -->
+
+<!-- Our Team starts -->
+<section class="team" id="our_team">
+  <div class="center">
+    <h1>Our Team</h1>
+  </div>
+
+  <div class="team-content">
+    <div class="box">
+      {{!-- <img src="images/aishwarya.jpeg" alt=""> --}}
+      <h3>Aishwarya V</h3>
+      <div class="icons">
+        <a href="#" ><i class="fa-brands fa-square-github"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="box">
+      {{!-- <img src="images/aditya.jpeg" alt=""> --}}
+      <h3>Aditya R</h3>
+      <div class="icons">
+        <a href="#" ><i class="fa-brands fa-square-github"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="box">
+      {{!-- <img src="images/deepthi.jpeg" alt=""> --}}
+      <h3>Deepthi S</h3>
+      <div class="icons">
+        <a href="#" ><i class="fa-brands fa-square-github"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="box">
+      {{!-- <img class="img"  src="images/kaushal.jpg" alt=""> --}}
+      <h3>Kaushal </h3>
+      <div class="icons">
+        <a href="#" ><i class="fa-brands fa-square-github"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="box">
+      {{!-- <img src="../images/siri.jpg" alt=""> --}}
+      <h3>Sreehitha A</h3>
+      <div class="icons">
+        <a href="#" ><i class="fa-brands fa-square-github"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+
+
+<!-- Our Team ends -->
+<!-- Footer starts -->
+
+<footer class="footer-distributed">
+  <div class="footer-left">
+    <h3>Funded<span>futures</span></h3>
+    <p class="footer-links">
+      <a href="#">Home</a>
+      <a href="#about_us">About Us</a>
+      <a href="#">Contact Us</a>
+    </p>
+    <p class="footer-company-name">Copyright &copy; 2023 <strong>FundedFutures</strong>
+    All rights reserved
+    </p>
+  </div>
+  
+  <div class="footer-center">
+    <div>
+      <i class="fa-solid fa-location-dot"></i>
+      <p>Duvvada</p>
+    </div>
+    <div>
+      <i class="fa fa-phone"></i>
+      <p>+91 9854832564</p>
+    </div>
+    <div>
+      <i class="fa fa-envelope"></i>
+      <p><a href="#">FundedFutures@gmail.com</a></p>
+    </div>
+  </div>
+
+  <div class="footer-right">
+    <p class="footer-company-about">
+      <span>About Us</span>
+      <strong>A website where you can find all the scholarships</strong>
+    </p>
+  
+
+  <div class="footer-icons">
+    <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+    <a href="#"><i class="fa-brands fa-square-twitter"></i></a>
+    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+    <a href="#"><i class="fa-brands fa-square-youtube"></i></a>
+    <a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+  </div>
+</div>
+</footer>
+<!-- Footer ends -->
+</body>
+
+
+</html>
